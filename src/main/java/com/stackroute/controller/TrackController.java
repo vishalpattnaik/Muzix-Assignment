@@ -92,20 +92,6 @@ public class TrackController {
 
     }
 
-
-    /*public void getBulkData() throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        System.out.println("vishal");
-        URL url = new URL("http://ws.audioscrobbler.com/2.0/?method=track.search&track=Believe&api_key=5a2f391ed9b92b27a6a5b4113743df8c&format=json");
-
-        Track track = objectMapper.readValue(url, Track.class);
-
-        trackRepository.save(track);
-
-        System.out.println(track.toString());
-    }*/
-
     @GetMapping("track")
     public ResponseEntity<?> getAllTracks() {
         ResponseEntity responseEntity = new ResponseEntity<>(trackService.getAllTracks(), HttpStatus.OK);
